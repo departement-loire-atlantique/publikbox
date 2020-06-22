@@ -13,7 +13,20 @@ Demarrer la machine virtuelle :
 ```
 $ vagrant up
 ```
-Les services publik seront automatiquement installés. Ils ont étés installés avec l'utilisateur login:pwd `publik:publik` et sont exposés sur le port 4040 de la machine host. Par example voici l'url pour accéder à combo : https://combo.dev.publik.love:4040
+Les services publik y seront déjà installés. Ils ont étés installés avec l'utilisateur système login:pwd `publik:publik`.
+
+Quelques informations récupérées depuis la [documentation d'Entr'Ouvert](https://doc-publik.entrouvert.com/dev/installation-developpeur/):
+
+> Publik est accessible à cette adresse : https://combo.dev.publik.love/.
+> 
+> ```
+> Utilisateur : admin@localhost
+> Mot de passe : admin
+> ```` 
+> Après votre première authentification, si vous ne voyez pas d'entrée "Fabrique de formulaires" et/ou "Fabrique de workflows" dans le menu, une visite sur la page suivante devrait résoudre le problème : https://wcs.dev.publik.love/login .
+> 
+> Sur les pages "Fabrique de formulaires" vous sera indiqué la nécessité de "définir des rôles", rendez vous sur https://authentic.dev.publik.love/manage/roles/ pour créer un rôle.
+
 
 ## Quelques commandes utiles
 
