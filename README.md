@@ -11,14 +11,13 @@ $ git clone https://github.com/departement-loire-atlantique/publikbox.git && cd 
 ```
 Demarrer la machine virtuelle :
 ```
-$ vagrant box add cg44/publikbox publikbox.box
 $ vagrant up
 ```
 Les services publik seront automatiquement installés. Ils ont étés installés avec l'utilisateur login:pwd `publik:publik` et sont exposés sur le port 4040 de la machine host. Par example voici l'url pour accéder à combo : https://combo.dev.publik.love:4040
 
 ## Quelques commandes utiles
 
-> Si vous êtes sur windows lancer toutes vos commandes dans l'interpreteur `git bash` qui a l'avantage d'embarquer un client ssh. (utile pour la commande `vagrant ssh`)
+> Si vous êtes sur windows lancez toutes vos commandes dans l'interpreteur `git bash` qui a l'avantage d'embarquer un client ssh. (utile pour la commande `vagrant ssh`)
 - `vagrant up` : demarre et construit la VM si celle-ci n'existe pas
 - `vagrant halt` : arrête la VM
 - `vagrant destroy` : arrête et supprime la VM ainsi que toutes ses ressources
