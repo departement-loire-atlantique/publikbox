@@ -1,7 +1,7 @@
 # publikbox
 
 ## Pré-requis
-Installer [vagrant](https://www.vagrantup.com/downloads.html) et [virtualbox](https://www.virtualbox.org/wiki/Downloads)
+Installer [vagrant](https://www.vagrantup.com/downloads.html), [virtualbox](https://www.virtualbox.org/wiki/Downloads) et aussi [ruby](https://rubyinstaller.org/)
 
 ## Mode opératoire
 

@@ -2,11 +2,10 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "departement-loire-atlantique/publikbox"
+  config.vm.box = "cg44/publikbox"
 
   # Forwarded ports
-  config.vm.network "forwarded_port", guest: 80, host: 80, host_ip: "127.0.0.1"
-  config.vm.network "forwarded_port", guest: 443, host: 443, host_ip: "127.0.0.1"
+  config.vm.network "forwarded_port", guest: 443, host: 4040, host_ip: "127.0.0.1"
 
   config.vm.provider "virtualbox" do |vb|
     # the machine name
