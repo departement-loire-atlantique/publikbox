@@ -14,8 +14,10 @@ Vagrant.configure("2") do |config|
   end
 
   # install apache and flask
+  config.vm.provision "file", source: "localhost.conf", destination: "/home/vagrant/localhost.conf"
+  config.vm.provision "file", source: "app.py", destination: "/home/vagrant/app.py"
+  config.vm.provision "file", source: "gunicorn.conf", destination: "/home/vagrant/gunicorn.conf"
+  config.vm.provision "file", source: "flaskapp.service", destination: "/home/vagrant/flaskapp.service"
   config.vm.provision "shell", path: "install.sh"
-  config.vm.provision "file", source: "localhost.conf", destination: "/etc/apache2/vhosts.d/localhost.conf"
-  config.vm.provision "file", source: "app.py", destination: "/home/flaskappuser/flaskapp/app.py"
 
 end

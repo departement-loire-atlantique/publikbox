@@ -5,17 +5,25 @@ set -e
 
 # installation d'apache
 zypper install --no-confirm apache2
-#sed 's/dummy-host.example.com/localhost/' /etc/apache2/vhosts.d/vhost.template >> /etc/apache2/vhosts.d/localhost.conf
+cp /home/vagrant/localhost.conf /etc/apache2/vhosts.d/localhost.conf
 mkdir -p /srv/www/vhosts/localhost/
 a2enmod proxy
 a2enmod proxy_http
 rcapache2 restart
 
 # installation de flask
-useradd --create-home flaskappuser
-mkdir /home/flaskappuser/flaskapp/
+groupadd flaskappuser
+useradd --create-home -g flaskappuser flaskappuser
+mkdir -p /home/flaskappuser/flaskapp/logs
 cd /home/flaskappuser/flaskapp/
 python3 -m venv flaskvenv
 source flaskvenv/bin/activate
 pip install flask gunicorn
-#touch /home/flaskappuser/flaskapp/app.py
+cp /home/vagrant/app.py /home/flaskappuser/flaskapp/app.py
+cp /home/vagrant/gunicorn.conf /home/flaskappuser/flaskapp/gunicorn.conf
+chown -R flaskappuser:flaskappuser /home/flaskappuser/
+
+# configuration du systemd pour le service flaskapp
+cp /home/vagrant/flaskapp.service /etc/systemd/system/flaskapp.service
+systemctl daemon-reload
+systemctl start flaskapp
