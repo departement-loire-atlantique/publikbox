@@ -9,7 +9,7 @@ sed -i 's/XKBVARIANT.*/XKBVARIANT="azerty"/g' /etc/default/keyboard
 service keyboard-setup restart
 
 # install tools
-apt update && apt install -y git ansible postgresql rabbitmq-server
+apt update && apt install -y git postgresql rabbitmq-server
 
 hostsAlreadyModify=$(cat /etc/hosts | grep db | wc -l)
 if [ "$hostsAlreadyModify" -eq "0" ]; then

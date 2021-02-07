@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vb|
     # the machine name
-    vb.name = "publikbox" 
+    vb.name = "publikbox_0646" 
   end
   
   # Disabling the default /vagrant
